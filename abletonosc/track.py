@@ -229,7 +229,7 @@ class TrackHandler(AbletonOSCHandler):
             send_id, = params
             parameter_object = getattr(target.mixer_device, prop)[send_id]
             self.logger.info("Getting property for %s: %s = %s" % (self.class_identifier, prop, parameter_object.value))
-            return parameter_object.value,
+            return send_id, parameter_object.value,
         else:
             parameter_object = getattr(target.mixer_device, prop)
             self.logger.info("Getting property for %s: %s = %s" % (self.class_identifier, prop, parameter_object.value))
